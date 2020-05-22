@@ -1,0 +1,22 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-amplify-google-react-dev-164054-authRole",
+            "UnauthRoleArn": "arn:aws:iam::192187338582:role/amplify-amplify-google-react-dev-164054-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::192187338582:role/amplify-amplify-google-react-dev-164054-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-amplify-google-react-dev-164054-deployment",
+            "UnauthRoleName": "amplify-amplify-google-react-dev-164054-unauthRole",
+            "StackName": "amplify-amplify-google-react-dev-164054",
+            "StackId": "arn:aws:cloudformation:us-east-1:192187338582:stack/amplify-amplify-google-react-dev-164054/c97a2bd0-8418-11ea-bf40-12a48490849f",
+            "AmplifyAppId": "d3acfcak0xoxwy"
+        },
+        "categories": {
+            "auth": {
+                "amplifygooglereact408fa1d7": {
+                    "hostedUIProviderCreds": "[]"
+                }
+            }
+        }
+    }
+}

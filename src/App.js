@@ -1,6 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+// mine for authentication
+import { Authenticator } from 'aws-amplify-react';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
+const federated = {
+  google_client_id: '429296299604-sl12okipl71ah4thmi5v8ld8uujfji6d.apps.googleusercontent.com',
+  facebook_app_id: '',
+  amazon_client_id: ''
+};
 
 function App() {
   return (
@@ -19,6 +30,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Authenticator federated={federated}></Authenticator>
     </div>
   );
 }

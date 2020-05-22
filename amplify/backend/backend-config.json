@@ -1,0 +1,67 @@
+{
+    "auth": {
+        "amplifygooglereact408fa1d7": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": []
+        }
+    },
+    "hosting": {
+        "S3AndCloudFront": {
+            "service": "S3AndCloudFront",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "storage": {
+        "dynamodbtable": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "function": {
+        "lambdafunction": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "dynamodbtable",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ]
+        },
+        "contactlambdafunction": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true
+        }
+    },
+    "api": {
+        "customrestapidomain": {
+            "service": "API Gateway",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "lambdafunction",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                },
+                {
+                    "category": "function",
+                    "resourceName": "contactlambdafunction",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ]
+        }
+    }
+}

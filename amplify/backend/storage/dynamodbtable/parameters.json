@@ -1,0 +1,5 @@
+{
+    "tableName": "dynamodbtable",
+    "partitionKeyName": "id",
+    "partitionKeyType": "S"
+}

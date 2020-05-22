@@ -1,0 +1,53 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "lambdafunction",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/contact",
+            "lambdaFunction": "contactlambdafunction",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "customrestapidomain",
+    "apiName": "customrestapidomain",
+    "functionArns": [
+        {
+            "lambdaFunction": "lambdafunction"
+        },
+        {
+            "lambdaFunction": "contactlambdafunction"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplify-google-react-dev-164054-authRole",
+        "unAuthRoleName": "amplify-amplify-google-react-dev-164054-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "lambdafunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "contactlambdafunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "a7f835c9"
+}
