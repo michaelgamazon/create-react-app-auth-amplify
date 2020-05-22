@@ -6,13 +6,13 @@ backend:
       commands:
         - '# Execute Amplify CLI with the helper script'
         - amplifyPush --simple
-	- echo 'end backend build phase'
+        - echo 'end backend build phase'
 frontend:
   phases:
     preBuild:
       commands:
         - yarn install
-	- echo 'end preBuild frontend phase'
+        - echo 'end preBuild frontend phase'
     build:
       commands:
         - yarn run build
